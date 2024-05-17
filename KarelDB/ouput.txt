@@ -1,0 +1,11 @@
+
+RobotID 1 at (street: 5) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 4) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 2 at (street: 7) (avenue: 2) (beepers: 0) ( direction: South) on
+RobotID 2 at (street: 7) (avenue: 2) (beepers: 0) ( direction: East) on
+RobotID 3 at (street: 8) (avenue: 2) (beepers: 0) ( direction: East) on
+
+
+QUERIES
+
+INSERT {"idRobot": 1,"calle": 6,"avenida": 1,"beepers": 0,"direccion": "South"}

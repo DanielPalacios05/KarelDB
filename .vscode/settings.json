@@ -1,0 +1,13 @@
+{
+    "java.project.referencedLibraries": [
+        "KarelDBJavaClient/json-simple-1.1.1.jar",
+        "Karel/Trabajos/json-simple-1.1.1.jar",
+        "Karel/KarelJRobot.jar"
+    ],
+    "java.project.sourcePaths": [
+        ".",
+        "Karel",
+        "Karel/src",
+        "Karel/Trabajos"
+    ]
+}

@@ -1,0 +1,154 @@
+RobotID 0 at (street: 12) (avenue: 8) (beepers: 0) ( direction: North) on
+RobotID 1 at (street: 12) (avenue: 9) (beepers: 0) ( direction: North) on
+RobotID 2 at (street: 14) (avenue: 8) (beepers: 0) ( direction: North) on
+RobotID 3 at (street: 14) (avenue: 9) (beepers: 0) ( direction: North) on
+RobotID 4 at (street: 16) (avenue: 8) (beepers: 0) ( direction: North) on
+RobotID 5 at (street: 16) (avenue: 9) (beepers: 0) ( direction: North) on
+RobotID 0 at (street: 12) (avenue: 8) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 12) (avenue: 9) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 12) (avenue: 7) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 12) (avenue: 6) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 12) (avenue: 5) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 12) (avenue: 4) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 12) (avenue: 3) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 12) (avenue: 2) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 12) (avenue: 1) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 12) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 12) (avenue: 8) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 12) (avenue: 7) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 11) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 12) (avenue: 6) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 12) (avenue: 5) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 12) (avenue: 4) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 12) (avenue: 3) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 12) (avenue: 2) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 12) (avenue: 1) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 12) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 10) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 3 at (street: 14) (avenue: 9) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 14) (avenue: 8) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 9) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 11) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 10) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 2 at (street: 14) (avenue: 7) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 14) (avenue: 6) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 14) (avenue: 5) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 14) (avenue: 4) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 14) (avenue: 3) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 14) (avenue: 2) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 14) (avenue: 1) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 14) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 8) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 8) (avenue: 1) (beepers: 0) ( direction: East) on
+RobotID 3 at (street: 14) (avenue: 8) (beepers: 0) ( direction: West) on
+RobotID 3 at (street: 14) (avenue: 7) (beepers: 0) ( direction: West) on
+"Exception in thread ""AWT-EventQueue-0"" RobotID 3 at (street: 14) (avenue: 6) (beepers: 0) ( direction: West) on"
+java.lang.UnsupportedOperationException
+at java.base/java.lang.Thread.stop(Thread.java:1667)
+at kareltherobot.RobotWorldWindow$ControlThread.doStop(RobotWorldWindow.java:466)
+at kareltherobot.RobotWorldWindow$CloseListener.windowClosing(RobotWorldWindow.java:1065)
+at java.desktop/java.awt.Window.processWindowEvent(Window.java:2085)
+at java.desktop/java.awt.Window.processEvent(Window.java:2044)
+at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4996)
+at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2780)
+at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828)
+at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
+at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:98)
+at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
+at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
+at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+RobotID 3 at (street: 14) (avenue: 5) (beepers: 0) ( direction: West) on
+RobotID 3 at (street: 14) (avenue: 4) (beepers: 0) ( direction: West) on
+RobotID 3 at (street: 14) (avenue: 3) (beepers: 0) ( direction: West) on
+RobotID 3 at (street: 14) (avenue: 2) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 13) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 3 at (street: 14) (avenue: 1) (beepers: 0) ( direction: West) on
+RobotID 3 at (street: 14) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 9) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 4 at (street: 16) (avenue: 8) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 8) (avenue: 2) (beepers: 0) ( direction: East) on
+RobotID 5 at (street: 16) (avenue: 9) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 8) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 8) (avenue: 2) (beepers: 0) ( direction: North) on
+RobotID 1 at (street: 8) (avenue: 1) (beepers: 0) ( direction: East) on
+RobotID 0 at (street: 8) (avenue: 2) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 12) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 8) (avenue: 2) (beepers: 0) ( direction: South) on
+RobotID 3 at (street: 13) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 4 at (street: 16) (avenue: 7) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 11) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 7) (avenue: 2) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 7) (avenue: 2) (beepers: 0) ( direction: East) on
+RobotID 4 at (street: 16) (avenue: 6) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 7) (avenue: 2) (beepers: 0) ( direction: North) on
+RobotID 4 at (street: 16) (avenue: 5) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 7) (avenue: 2) (beepers: 0) ( direction: West) on
+RobotID 5 at (street: 16) (avenue: 8) (beepers: 0) ( direction: West) on
+RobotID 5 at (street: 16) (avenue: 7) (beepers: 0) ( direction: West) on
+RobotID 5 at (street: 16) (avenue: 6) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 10) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 2 at (street: 9) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 3 at (street: 12) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 3 at (street: 11) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 8) (avenue: 2) (beepers: 0) ( direction: East) on
+RobotID 1 at (street: 8) (avenue: 2) (beepers: 0) ( direction: North) on
+RobotID 4 at (street: 16) (avenue: 4) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 8) (avenue: 2) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 7) (avenue: 1) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 8) (avenue: 2) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 7) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 3 at (street: 10) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 6) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 2 at (street: 8) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 2 at (street: 8) (avenue: 1) (beepers: 0) ( direction: East) on
+RobotID 3 at (street: 9) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 5 at (street: 16) (avenue: 5) (beepers: 0) ( direction: West) on
+RobotID 4 at (street: 16) (avenue: 3) (beepers: 0) ( direction: West) on
+RobotID 4 at (street: 16) (avenue: 2) (beepers: 0) ( direction: West) on
+RobotID 1 at (street: 7) (avenue: 2) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 7) (avenue: 2) (beepers: 0) ( direction: East) on
+RobotID 0 at (street: 5) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 7) (avenue: 2) (beepers: 0) ( direction: North) on
+RobotID 0 at (street: 4) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 7) (avenue: 2) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 3) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 2) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 1) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 1) (avenue: 1) (beepers: 0) ( direction: East) on
+RobotID 5 at (street: 16) (avenue: 4) (beepers: 0) ( direction: West) on
+RobotID 5 at (street: 16) (avenue: 3) (beepers: 0) ( direction: West) on
+RobotID 4 at (street: 16) (avenue: 1) (beepers: 0) ( direction: West) on
+RobotID 4 at (street: 16) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 2 at (street: 8) (avenue: 2) (beepers: 0) ( direction: East) on
+RobotID 2 at (street: 8) (avenue: 2) (beepers: 0) ( direction: North) on
+RobotID 1 at (street: 7) (avenue: 1) (beepers: 0) ( direction: West) on
+RobotID 2 at (street: 8) (avenue: 2) (beepers: 0) ( direction: West) on
+RobotID 0 at (street: 1) (avenue: 2) (beepers: 0) ( direction: East) on
+RobotID 1 at (street: 7) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 2 at (street: 8) (avenue: 2) (beepers: 0) ( direction: South) on
+RobotID 0 at (street: 1) (avenue: 3) (beepers: 0) ( direction: East) on
+RobotID 5 at (street: 16) (avenue: 2) (beepers: 0) ( direction: West) on
+RobotID 4 at (street: 15) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 4 at (street: 14) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 4 at (street: 13) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 3 at (street: 8) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 3 at (street: 8) (avenue: 1) (beepers: 0) ( direction: East) on
+RobotID 1 at (street: 6) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 5) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 1 at (street: 4) (avenue: 1) (beepers: 0) ( direction: South) on
+RobotID 2 at (street: 7) (avenue: 2) (beepers: 0) ( direction: South) on
+RobotID 2 at (street: 7) (avenue: 2) (beepers: 0) ( direction: East) on
+RobotID 3 at (street: 8) (avenue: 2) (beepers: 0) ( direction: East) on

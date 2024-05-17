@@ -1,0 +1,158 @@
+{
+    "db_name": "MyDatabase",
+    "tables": [
+      {
+        "name": "Robot",
+        "columns": [
+          {
+            "name": "tipoRobot",
+            "type": "string"
+          },
+          {
+            "name": "idRobot",
+            "type": "integer"
+          },
+          {
+            "name": "encendido",
+            "type": "boolean"
+          },
+          {
+            "name": "calle",
+            "type": "integer"
+          },
+          {
+            "name": "avenida",
+            "type": "integer"
+          },
+          {
+            "name": "beepers",
+            "type": "integer"
+          },
+          {
+            "name": "direccion",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "logEventos",
+        "columns": [
+          {
+            "name": "timeStamp",
+            "type": "string"
+          },
+          {
+            "name": "idRobot",
+            "type": "integer"
+          },
+          {
+            "name": "avenida",
+            "type": "integer"
+          },
+          {
+            "name": "calle",
+            "type": "integer"
+          },
+          {
+            "name": "beepers",
+            "type": "integer"
+          }
+        ]
+      },
+      {
+        "name": "EstadoPrograma",
+        "columns": [
+          {
+            "name": "timeStamp",
+            "type": "string"
+          },
+          {
+            "name": "Estado",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "VariablesEstaticas",
+        "columns": [
+          {
+            "name": "timeStamp",
+            "type": "string"
+          },
+          {
+            "name": "minaVacia",
+            "type": "boolean"
+          },
+          {
+            "name": "debugHabilitado",
+            "type": "boolean"
+          },
+          {
+            "name": "ejecutarLog",
+            "type": "boolean"
+          },
+          {
+            "name": "encontroVeta",
+            "type": "boolean"
+          },
+          {
+            "name": "extraccionCompleta",
+            "type": "boolean"
+          },
+          {
+            "name": "fondoVeta",
+            "type": "boolean"
+          },
+          {
+            "name": "inicioExtraccion",
+            "type": "boolean"
+          },
+          {
+            "name": "inicioTransporte",
+            "type": "boolean"
+          },
+          {
+            "name": "salidaExtractores",
+            "type": "boolean"
+          },
+          {
+            "name": "salidaTrenes",
+            "type": "boolean"
+          },
+          {
+            "name": "bodegaEnUso",
+            "type": "boolean"
+          },
+          {
+            "name": "arr_bodegas",
+            "type": "array"
+          },
+          {
+            "name": "cantidadMineros",
+            "type": "integer"
+          },
+          {
+            "name": "cantidadTrenes",
+            "type": "integer"
+          },
+          {
+            "name": "cantidadExtractores",
+            "type": "integer"
+          },
+          {
+            "name": "minerosSalida",
+            "type": "integer"
+          },
+          {
+            "name": "beepersExtraidos",
+            "type": "integer"
+          },
+          {
+            "name": "trenesSalida",
+            "type": "integer"
+          }
+        ]
+      }
+    ]
+  }
+  

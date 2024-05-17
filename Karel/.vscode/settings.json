@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "src",
+        "Trabajos"
+    ],
+    "java.project.referencedLibraries": [
+        "KarelJRobot.jar",
+        "Trabajos/json-simple-1.1.1.jar"
+    ]
+}
