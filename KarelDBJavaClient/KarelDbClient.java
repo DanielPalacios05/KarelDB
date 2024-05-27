@@ -113,7 +113,7 @@ public class KarelDbClient {
         KarelDbClient kb = new KarelDbClient();
         String msg = "CREATE " + dObject.toJSONString();
         System.out.println("Sent message " + msg);
-        kb.startConnection("localhost", 2025);
+        kb.startConnection("localhost", 2024);
         System.out.println(kb.sendMessage(msg));
 
         /*

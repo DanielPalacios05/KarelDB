@@ -9,3 +9,6 @@ RobotID 3 at (street: 8) (avenue: 2) (beepers: 0) ( direction: East) on
 QUERIES
 
 INSERT {"idRobot": 1,"calle": 6,"avenida": 1,"beepers": 0,"direccion": "South"}
+
+SELECT {"db_name":"RobotDB", "table_name":"Robot","where":"ALL"}
+SELECT {"db_name":"RobotDB", "table_name":"Robot","where":{"idRobot":4}}

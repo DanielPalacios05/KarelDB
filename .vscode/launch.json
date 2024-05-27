@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "KarelDbClient",
+            "request": "launch",
+            "mainClass": "KarelDBJavaClient.KarelDbClient",
+            "projectName": "Projecto3_4741ae88"
+        },
+        {
+            "type": "java",
+            "name": "KarelDbConsole",
+            "request": "launch",
+            "mainClass": "KarelDbConsole",
+            "projectName": "Projecto3_4741ae88"
+        },
+        {
+            "type": "java",
             "name": "Minero",
             "request": "launch",
             "mainClass": "Minero",

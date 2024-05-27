@@ -1,3 +1,5 @@
 Informe final: https://docs.google.com/presentation/d/1ofJ5k1OC1yonqfwWxAWvX-_EUf7duZF3hDfkm5knLm0/edit?usp=
 
 Codigo Fuente : https://github.com/DanielPalacios05/OperatingSystemsProject2
+
+SELECT {"db_name":"RobotDB", "table_name":"Robot","where":"ALL"}

@@ -91,7 +91,6 @@ class KarelDbRepository:
             raise DBException(f"Table {table_name} not found in database '{db_name}'.")
         
         selected_rows : list[KarelRow]= target_table.select_rows(where)
-
         
         for row in selected_rows:
             
@@ -102,13 +101,15 @@ class KarelDbRepository:
                         raise DBException(f"field is not in {target_table} table")
 
                     column = target_table.get_column(field)
-                    column.validate_column_value(value)
-                    try:
-                        row.update_row(record)
-                    except DBException as updateError:
-                        raise DBException(f"{str(updateError)},at {target_table}")
+                    if column.validate_column_value(value):
+                        try:
+                            row.update_row(record)
+                        except DBException as updateError:
+                            raise DBException(f"{str(updateError)},at {target_table}")
 
-                    affected_rows+=1
+                        affected_rows+=1
+        for row in selected_rows:
+            row.release_row()
 
 
 
@@ -243,18 +244,23 @@ class KarelTable():
         return self.columns.get(column_name)
     def add_row(self,new_row : KarelRow):
         self.rows.append(new_row)
-    def select_rows(self,where:dict):
+    def select_rows(self,where:dict | str):
 
         selected_rows : list[KarelRow] = []
         
-        for row in self.rows:
-            row.lock_row()
-
-            if row.matches(where):
+        if type(where) is str and where == "ALL":
+            for row in self.rows:
+                row.lock_row()
                 selected_rows.append(row)
-            else:
-                row.release_row()
-        
+        elif type(where) is dict:
+            for row in self.rows:
+                row.lock_row()
+
+                if row.matches(where):
+                    selected_rows.append(row)
+                else:
+                    row.release_row()
+            
         return selected_rows
 
 

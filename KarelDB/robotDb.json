@@ -50,6 +50,10 @@
             }
           },
           {
+            "name" : "encendido",
+            "type" : "boolean"
+          },
+          {
             "name": "avenida",
             "type": "integer"
           },
