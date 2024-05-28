@@ -8,7 +8,7 @@ public class KarelDbConsole {
         KarelDbClient dbclient = new KarelDbClient();
         Scanner sc = new Scanner(System.in);
 
-        dbclient.startConnection("localhost", 2025);
+        dbclient.startConnection("localhost", 2024);
 
 
         while (true) {

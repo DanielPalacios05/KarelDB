@@ -12,3 +12,4 @@ INSERT {"idRobot": 1,"calle": 6,"avenida": 1,"beepers": 0,"direccion": "South"}
 
 SELECT {"db_name":"RobotDB", "table_name":"Robot","where":"ALL"}
 SELECT {"db_name":"RobotDB", "table_name":"Robot","where":{"idRobot":4}}
+SELECT {"db_name":"RobotDB", "table_name":"logEventos","where":"ALL"}
