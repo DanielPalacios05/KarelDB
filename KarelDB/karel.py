@@ -4,26 +4,31 @@
 import json
 import traceback
 from kareldbinternals import KarelDbRepository
+from KarelDbPersistence import KarelDbPersistence
 class KarelDB:
 
-    def __init__(self,kareldb_repository: KarelDbRepository) -> None:
+    def __init__(self,kareldb_repository: KarelDbRepository,kareldb_persistence: KarelDbPersistence) -> None:
 
         self.repository = kareldb_repository 
-        #Crear un nuevo proceso que llame un metodo start_server()
-        pass
-    """
-    def load_db(self, schema_path : str):
-        #TODO: Lock database, create transaction log for db
-        with open(schema_path, "r") as archivo_json:
-            newDb : dict= json.load(archivo_json) 
-            if self.databases.get(newDb.get("db_name")) is None :
-                self.databases[newDb.get("db_name")] = newDb
-
-                for table in self.databases.get(newDb.get("db_name")).get("tables"):
-                    table["rows"] = []
-            else:
-                raise Exception(f"{newDb.get("db_name")} already exists")
-    """
+        self.persistence = kareldb_persistence
+        
+        
+    def initialize(self):
+        
+        print("KarelDB: Initializing KarelDB")
+        
+        self.persistence.initialize()
+        
+        aof_files = self.persistence.get_aof_files()
+            
+        for db_name,aof_file in aof_files.items():
+            
+            print(f"KarelDB: loading {db_name} db from {aof_file.get_file_name()} aof file")
+            
+            for line in aof_file.get_operations():
+                
+                self.call(line.strip(),from_aof=True)
+        
 
     def search(self,dbName: str, tableName: str, columnName: str, value: str):
         
@@ -56,9 +61,8 @@ class KarelDB:
  
     def create(self,db_schema:dict):
         try:
-
             created_db = self.repository.create_db(db_schema)
-            return 0, f"Database {created_db.get_name()} sucessfully created"
+            return {"status_code":0, "body":f"Database {created_db.get_name()} sucessfully created"}
         except Exception as e:
              return {"status_code":1,"body":str(e)}
 
@@ -78,7 +82,7 @@ class KarelDB:
             # Your insert logic here
             self.repository.insert(db_name,table_name,record)
 
-            return {"status_code":0,"body":"Valor insertado correctamente"}
+            return {"status_code":0,"body":"Inserted value correctly"}
         except Exception as e:
             return {"status_code":1,"body":str(e)}
         
@@ -88,7 +92,7 @@ class KarelDB:
         try:
             rows_affected = self.repository.update(db_name,table_name,record,where)
             # Your update logic here
-            return 0, "Operación realizada correctamente"
+            return {"status_code":0,"body":f"rows affected from {table_name} at {db_name}: {rows_affected}"}
         except Exception as e:
              return {"status_code":1,"body":str(e)}
 
@@ -107,18 +111,28 @@ class KarelDB:
         except Exception as e:
              return {"status_code":1,"body":str(e)}
 
-    def call(self, message:str):
+    def call(self, message:str,from_aof=False):
 
         try:
             parts = message.split(' ', 1)
             operation = parts[0].upper();
             body = json.loads(parts[1].strip())
             if operation == "CREATE":
-                return self.create(body)
+                result = self.create(body)    
+                if result["status_code"] == 0 and not from_aof:
+                        self.persistence.create_file(body["db_name"])
+                        self.persistence.append_operation(body["db_name"],message)
+                return result
             elif operation == 'INSERT':
-                return self.insert(body['db_name'], body['table_name'], body['record'])
+                result = self.insert(body['db_name'], body['table_name'], body['record'])
+                if result["status_code"] == 0 and not from_aof:
+                    self.persistence.append_operation(body["db_name"],message)
+                return result
             elif operation == 'UPDATE':
-                return self.update(body['db_name'], body['table_name'], body['record'], body['where'])
+                result = self.update(body['db_name'], body['table_name'], body['record'], body['where'])
+                if result["status_code"] == 0 and not from_aof:
+                    self.persistence.append_operation(body["db_name"],message)
+                return result
             elif operation == 'SELECT':
                 return self.select(body['db_name'], body['table_name'], body['where'])
             else:

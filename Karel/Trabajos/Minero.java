@@ -124,18 +124,131 @@ public class Minero extends AugmentedRobot implements Directions {
 			return "";
 		}
 	}
-
+	@SuppressWarnings("unchecked")
 	public void pickBeeper() {
 		super.pickBeeper();
-		String stringPickbeeper = this.toString();
-		convertirFormatoRobot(stringPickbeeper, tipoRobot);
-	}
+		JSONParser parser = new JSONParser();
+		try {
+			JSONObject jsonPickBeeper = (JSONObject) parser.parse(convertirFormatoRobot(this.toString(), tipoRobot));
 
+			JSONObject newRecord = new JSONObject();
+
+			newRecord.put("idRobot", jsonPickBeeper.get("idRobot"));
+			newRecord.put("timeStamp", getActualDateTimeString());
+			newRecord.put("encendido", jsonPickBeeper.get("encendido"));
+			newRecord.put("avenida", jsonPickBeeper.get("avenida"));
+			newRecord.put("calle", jsonPickBeeper.get("calle"));
+			newRecord.put("beepers", jsonPickBeeper.get("beepers"));
+			newRecord.put("direccion", jsonPickBeeper.get("direccion"));
+
+			JSONObject recordUpdate = new JSONObject();
+			JSONObject where = new JSONObject();
+
+
+			recordUpdate.put("beepers", jsonPickBeeper.get("beepers"));
+
+			where.put("idRobot", jsonPickBeeper.get("idRobot"));
+
+			System.out.println(db_client.update(db_name, "Robot",recordUpdate ,where ));
+			System.out.println(db_client.insert(db_name, "logEventos", newRecord));
+		} catch (ParseException e) {
+			System.out.println("Something went wrong while parsing: " + e.toString());	
+		}
+	}
+	@SuppressWarnings("unchecked")
 	public void turnLeft() {
 		super.turnLeft();
-		String stringTurnLeft = this.toString();
-		convertirFormatoRobot(stringTurnLeft, tipoRobot);
+		JSONParser parser = new JSONParser();
+		try {
+			JSONObject jsonTurnLeft = (JSONObject) parser.parse(convertirFormatoRobot(this.toString(), tipoRobot));
 
+			JSONObject newRecord = new JSONObject();
+
+			newRecord.put("idRobot", jsonTurnLeft.get("idRobot"));
+			newRecord.put("timeStamp", getActualDateTimeString());
+			newRecord.put("encendido", jsonTurnLeft.get("encendido"));
+			newRecord.put("avenida", jsonTurnLeft.get("avenida"));
+			newRecord.put("calle", jsonTurnLeft.get("calle"));
+			newRecord.put("beepers", jsonTurnLeft.get("beepers"));
+			newRecord.put("direccion", jsonTurnLeft.get("direccion"));
+
+			JSONObject recordUpdate = new JSONObject();
+			JSONObject where = new JSONObject();
+
+
+			recordUpdate.put("direccion", jsonTurnLeft.get("direccion"));
+			
+
+			where.put("idRobot", jsonTurnLeft.get("idRobot"));
+
+			System.out.println(db_client.update(db_name, "Robot",recordUpdate ,where ));
+			System.out.println(db_client.insert(db_name, "logEventos", newRecord));
+		} catch (ParseException e) {
+			System.out.println("Something went wrong while parsing: " + e.toString());	
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public void turnOff(){
+		super.turnOff();
+		JSONParser parser = new JSONParser();
+		try {
+			JSONObject jsonTurnOff = (JSONObject) parser.parse(convertirFormatoRobot(this.toString(), tipoRobot));
+
+			JSONObject newRecord = new JSONObject();
+
+			newRecord.put("idRobot", jsonTurnOff.get("idRobot"));
+			newRecord.put("timeStamp", getActualDateTimeString());
+			newRecord.put("encendido", jsonTurnOff.get("encendido"));
+			newRecord.put("avenida", jsonTurnOff.get("avenida"));
+			newRecord.put("calle", jsonTurnOff.get("calle"));
+			newRecord.put("beepers", jsonTurnOff.get("beepers"));
+			newRecord.put("direccion", jsonTurnOff.get("direccion"));
+
+			JSONObject recordUpdate = new JSONObject();
+			JSONObject where = new JSONObject();
+
+
+			recordUpdate.put("encendido", jsonTurnOff.get("encendido"));
+
+			where.put("idRobot", jsonTurnOff.get("idRobot"));
+
+			System.out.println(db_client.update(db_name, "Robot",recordUpdate ,where ));
+			System.out.println(db_client.insert(db_name, "logEventos", newRecord));
+		} catch (ParseException e) {
+			System.out.println("Something went wrong while parsing: " + e.toString());	
+		}
+	}
+	@SuppressWarnings("unchecked")
+	public void putBeeper(){
+		super.putBeeper();
+		JSONParser parser = new JSONParser();
+		try {
+			JSONObject jsonPutBeeper = (JSONObject) parser.parse(convertirFormatoRobot(this.toString(), tipoRobot));
+
+			JSONObject newRecord = new JSONObject();
+
+			newRecord.put("idRobot", jsonPutBeeper.get("idRobot"));
+			newRecord.put("timeStamp", getActualDateTimeString());
+			newRecord.put("encendido", jsonPutBeeper.get("encendido"));
+			newRecord.put("avenida", jsonPutBeeper.get("avenida"));
+			newRecord.put("calle", jsonPutBeeper.get("calle"));
+			newRecord.put("beepers", jsonPutBeeper.get("beepers"));
+			newRecord.put("direccion", jsonPutBeeper.get("direccion"));
+
+			JSONObject recordUpdate = new JSONObject();
+			JSONObject where = new JSONObject();
+
+
+			recordUpdate.put("beepers", jsonPutBeeper.get("beepers"));
+
+			where.put("idRobot", jsonPutBeeper.get("idRobot"));
+
+			System.out.println(db_client.update(db_name, "Robot",recordUpdate ,where ));
+			System.out.println(db_client.insert(db_name, "logEventos", newRecord));
+		} catch (ParseException e) {
+			System.out.println("Something went wrong while parsing: " + e.toString());	
+		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -153,6 +266,7 @@ public class Minero extends AugmentedRobot implements Directions {
 			newRecord.put("avenida", jsonMove.get("avenida"));
 			newRecord.put("calle", jsonMove.get("calle"));
 			newRecord.put("beepers", jsonMove.get("beepers"));
+			newRecord.put("direccion", jsonMove.get("direccion"));
 
 			JSONObject recordUpdate = new JSONObject();
 			JSONObject where = new JSONObject();

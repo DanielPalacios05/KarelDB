@@ -7,8 +7,7 @@ import signal
 import sys
 import pickle
 from kareldbinternals import KarelDbRepository
-
-
+from KarelDbPersistence import KarelDbPersistence
 
 class KarelDBServer:
 
@@ -20,12 +19,13 @@ class KarelDBServer:
             self.isOn = True
             self.connections = []
             signal.signal(signal.SIGINT, self.__signal_handler__)
-            self.karelDBinstance = karel.KarelDB(kareldb_repository=KarelDbRepository())
+            self.karelDBinstance = karel.KarelDB(kareldb_repository=KarelDbRepository(),kareldb_persistence=KarelDbPersistence())
             self.message_size = 1024*1024 # Every message is maximum 1mb
 
 
 
     def start_server(self):
+          self.karelDBinstance.initialize()
           self.sock.listen()
           print(f"KarelDB ready for accepting connections at {self.host}:{self.port}")
 
@@ -46,9 +46,10 @@ class KarelDBServer:
                   print(f"{threading.current_thread()._name}: Connection died")
                   self.__close_connection__(conn)
                   connection_isOn = False
-            else:    
-                th = threading.Thread(target=self.__serve_request_,name=f"REQ-{connection_idx}-{addr[0]}:{addr[1]}",args=(conn,addr,request_msg))
-                th.start()
+            else:
+                for req_msg in request_msg.split("\n")[:-1]:             
+                  th = threading.Thread(target=self.__serve_request_,name=f"REQ-{connection_idx}-{addr[0]}:{addr[1]}",args=(conn,addr,req_msg))
+                  th.start()
     
     def __serve_request_(self,conn: socket.socket,addr,request_msg):
             print(f"{threading.current_thread()._name }: {request_msg}")

@@ -64,6 +64,10 @@
           {
             "name": "beepers",
             "type": "integer"
+          },
+          {
+            "name": "direccion",
+            "type":"string"
           }
         ]
       },

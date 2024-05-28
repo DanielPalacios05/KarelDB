@@ -34,7 +34,7 @@ public class KarelDbClient {
     }
 
     public String sendMessage(String msg) {
-        out.printf("%s",msg);
+        out.printf("%s\n",msg);
         String resp;
         try {
             resp = in.readLine();

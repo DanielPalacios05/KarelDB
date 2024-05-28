@@ -110,6 +110,8 @@ class KarelDbRepository:
                         affected_rows+=1
         for row in selected_rows:
             row.release_row()
+        
+        return affected_rows
 
 
 
